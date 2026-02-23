@@ -351,6 +351,9 @@ function renderProducts(productList) {
     if (noResults) {
         noResults.style.display = productList.length === 0 ? 'block' : 'none';
     }
+
+    // Observe newly rendered cards for scroll animations
+    initScrollAnimations();
 }
 
 // ============================================
