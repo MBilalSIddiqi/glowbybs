@@ -2,6 +2,95 @@
 
 ---
 
+### v3.6 - 2026-02-23
+**Fixed Product Card Scroll Animations Not Triggering**
+
+**Issue:** Product cards had animation classes but the Intersection Observer was set up before cards were rendered into the DOM, so it couldn't observe them.
+
+**Solution Implemented:**
+1. Added `initScrollAnimations()` call at the end of `renderProducts()` so newly rendered cards are picked up by the observer
+2. This also ensures cards re-animate correctly when filters change and cards are re-rendered
+
+**Files Modified:**
+- assets/js/script.js - Added `initScrollAnimations()` call at end of `renderProducts()`
+
+**Result:**
+- Product cards now correctly fade and slide in as user scrolls down
+- Animations also work after applying filters on the products page
+
+---
+
+### v3.5 - 2026-02-23
+**Added Scroll-Triggered Entrance Animations and Hero Load Animation**
+
+**Issue:** The site only had hover transitions. There were no scroll-based entrance animations or page load effects, making the site feel static as users scrolled.
+
+**Solution Implemented:**
+1. Added three CSS keyframe animations: `fadeInUp`, `fadeIn`, `scaleIn`
+2. Hero content animates automatically on page load with `scaleIn`
+3. Used Intersection Observer API to trigger animations when elements enter the viewport (no scroll event listeners — better performance)
+4. Added `.animate-on-scroll` base class (hidden by default) and `.animated` triggered class
+5. Added stagger delays (`.stagger-1` through `.stagger-6`) for cascading card animations
+6. Added `prefers-reduced-motion` media query to disable all animations for accessibility
+7. Applied animation classes to product cards, review cards, section titles, and about section
+
+**Files Modified:**
+- assets/css/styles.css - Added keyframes, animation classes, stagger delays, and reduced-motion media query
+- assets/js/script.js - Added `initScrollAnimations()` function using Intersection Observer, called from DOMContentLoaded; updated `renderProducts()` and `renderReviews()` to add animation classes to cards
+- index.html - Added animation classes to section titles, reviews header, and about content
+
+**Result:**
+- Hero content scales in on page load
+- Cards fade and slide up with staggered delays as user scrolls
+- Animations play once only and are disabled for users who prefer reduced motion
+
+---
+
+### v3.4 - 2026-02-23
+**Added Customer Review Cards Section to Homepage**
+
+**Feature:** Added a customer reviews section to the homepage to provide social proof after the products section.
+
+**Implementation:**
+1. Created a `reviews` data array with 6 customer reviews (name, rating, review text, date)
+2. Added `renderStarRating()` helper function to generate star characters
+3. Added `renderReviews()` function using safe DOM methods (matches existing `renderProducts()` pattern for XSS safety)
+4. Called `renderReviews()` from `DOMContentLoaded`
+5. Added new reviews section in HTML between Products and About sections with section-label pill, heading, and empty grid container
+6. Added full CSS styles: `.reviews-section`, `.reviews-grid` (3-column responsive), `.review-card`, `.review-stars`, `.review-text`, `.review-footer`, `.review-author`, `.review-date`
+
+**Files Modified:**
+- assets/js/script.js - Added `reviews` data array, `renderStarRating()`, and `renderReviews()` functions
+- assets/css/styles.css - Added all review card styles with hover lift effect
+- index.html - Added reviews section HTML between products and about sections
+
+**Result:**
+- 6 customer reviews display in a 3-column grid on desktop
+- Cards lift on hover and stagger-animate on scroll
+- Fully responsive — stacks to single column on mobile
+- Accessible with ARIA labels
+
+---
+
+### v3.3 - 2026-02-23
+**Fixed Sitemap — Removed Error Pages and Added lastmod Dates**
+
+**Issue:** The sitemap included 404.html, 500.html, and error.html, which search engines should not index. Also missing `<lastmod>` dates which help search engines prioritise crawling.
+
+**Solution Implemented:**
+1. Removed 404.html, 500.html, and error.html entries from sitemap.xml
+2. Added `<lastmod>` dates to all remaining 8 pages based on actual file modification dates
+
+**Files Modified:**
+- sitemap.xml - Removed 3 error page entries, added lastmod dates to all pages
+
+**Result:**
+- Sitemap reduced from 11 to 8 URLs
+- Search engines will no longer attempt to index error pages
+- lastmod dates help search engines crawl more efficiently
+
+---
+
 ### v3.2 - 2026-01-31
 **Vertical Navigation & Non-Sticky Header**
 
@@ -708,8 +797,8 @@
 
 ## Acknowledgments
 
-Development sessions conducted from January 21, 2026 to January 31, 2026.
-Total development time: ~40 hours of focused development work.
+Development sessions conducted from January 21, 2026 to February 23, 2026.
+Total development time: ~45 hours of focused development work.
 Collaboration between human requirements and AI implementation.
 
-*Last Updated: January 31, 2026*
+*Last Updated: February 23, 2026*
