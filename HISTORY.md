@@ -2,6 +2,29 @@
 
 ---
 
+### v3.9 - 2026-03-02
+**Fixed GA4 ID, CSP Policy, and Schema.org Domain**
+
+**Issues:**
+1. GA4 Measurement ID had an extra "H" (`G-VL5KR17Z7H` → `G-VL5KR17Z7`), so analytics data was never collected
+2. Content Security Policy blocked Google Fonts (`font-src 'self'` didn't allow `fonts.gstatic.com`) and external Open Graph images
+3. Schema.org JSON-LD used `https://binte-samin-soaps.com` but site is hosted at `https://mbilalsiddiqi.github.io/bint-e-samin-soaps/`
+
+**Solution Implemented:**
+1. Corrected GA4 ID to `G-VL5KR17Z7` across all 11 HTML files
+2. Updated CSP: added `https://fonts.gstatic.com` to `font-src`, `https://fonts.googleapis.com` to `style-src`, `https:` to `img-src`
+3. Replaced all Schema.org domain references with the correct GitHub Pages URL
+
+**Files Modified:**
+- All 11 HTML files (index, products, about, contact, faq, privacy, terms, refund, 404, 500, error)
+
+**Result:**
+- GA4 analytics now collecting data correctly
+- Google Fonts load without CSP violations in strict browsers
+- Schema.org structured data points to the correct live URL
+
+---
+
 ### v3.8 - 2026-03-02
 **Fixed Mobile Menu Dropdown Positioning**
 
