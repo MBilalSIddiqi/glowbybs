@@ -219,6 +219,99 @@ header {
     text-decoration: underline; /* Subtle underline on hover */
 }
 
+/* Products Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font: inherit;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    opacity: 0.8;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 240px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    list-style: none;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(156, 175, 136, 0.12);
+    padding-left: 24px;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    background: #eee;
+    margin: 6px 12px;
+}
+
+.badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.best-seller {
+    background: #9CAF88;
+    color: white;
+}
+
+.badge.limited {
+    background: #E8945A;
+    color: white;
+}
+
 /* Position the cart button next to navigation */
 .nav-links > button {
     margin-left: 1.5rem; /* Space between last nav item and cart button */
@@ -1266,6 +1359,49 @@ footer {
     .nav-links.active .cart-btn {
         animation: menuItemSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         animation-delay: 0.3s;
+    }
+
+    /* Mobile dropdown - disable hover, use click */
+    .dropdown:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        position: static;
+        min-width: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: none;
+        box-shadow: none;
+        border-radius: 12px;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-menu a {
+        color: white;
+        justify-content: center;
+    }
+
+    .dropdown-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        padding-left: 20px;
+    }
+
+    .dropdown-menu .divider {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown-toggle {
+        color: white;
+        padding: 0.85rem 1rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 12px;
     }
 
     .hero-content h2 {

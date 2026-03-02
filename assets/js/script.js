@@ -200,6 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     initScrollAnimations();
 
+    // Products dropdown toggle (mobile click support)
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdownToggle && dropdown) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            dropdown.classList.toggle('open');
+            dropdownToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     // Add debounced search functionality for products page
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {

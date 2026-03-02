@@ -2,6 +2,32 @@
 
 ---
 
+### v4.0 - 2026-03-02
+**Added Products Dropdown Menu with Badges**
+
+**Feature:** Replaced the plain "Products" nav link with a dropdown menu showcasing popular products, with hover on desktop and click on mobile.
+
+**Implementation:**
+1. Replaced "Products" link with dropdown in all 11 HTML files
+2. Dropdown shows 4 featured products + "View All Products" link
+3. Added "Best Seller" badge on Lavender Dreams, "Limited" badge on Mint Fresh
+4. Desktop: opens on hover with slide-down animation and frosted glass effect
+5. Mobile: opens on click with adapted styling (white text, translucent background)
+6. Closes when clicking outside on mobile
+7. Proper `aria-expanded` attribute for accessibility
+
+**Files Modified:**
+- All 11 HTML files - Replaced Products nav link with dropdown markup
+- assets/css/styles.css - Added dropdown, badge, and divider styles (desktop + mobile)
+- assets/js/script.js - Added click toggle and outside-click-to-close for mobile
+
+**Result:**
+- Premium dropdown menu with frosted glass look on desktop
+- Mobile-friendly click-based dropdown
+- Badges highlight key products to increase clicks
+
+---
+
 ### v3.9 - 2026-03-02
 **Fixed GA4 ID, CSP Policy, and Schema.org Domain**
 
