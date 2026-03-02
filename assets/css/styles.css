@@ -128,7 +128,7 @@ header {
     color: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     z-index: 100;
-    position: static; /* Changed from sticky to static */
+    position: relative;
 }
 
 .navbar {
@@ -1163,32 +1163,29 @@ footer {
     }
 
     .navbar .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
         padding: 1rem;
-        position: relative;
     }
 
     .hamburger {
         display: flex;
         position: absolute;
         right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 1.5rem;
         z-index: 1001;
     }
 
     .nav-links {
         display: none;
-        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        right: 1rem;
         background: linear-gradient(135deg, rgba(156, 175, 136, 0.95) 0%, rgba(107, 142, 35, 0.95) 100%);
         padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        border-radius: 15px;
+        border-radius: 0 0 15px 15px;
         z-index: 1000;
         backdrop-filter: blur(10px);
-        margin-top: 1rem;
     }
 
     .nav-links.active {
