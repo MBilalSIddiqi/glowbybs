@@ -2,6 +2,35 @@
 
 ---
 
+### v4.2 - 2026-03-05
+**Added Scroll-Triggered Entrance Animations**
+
+**Feature:** Added subtle scroll-based entrance animations using the Intersection Observer API to make the browsing experience more engaging as users scroll through the site.
+
+**Implementation:**
+1. Added CSS keyframe animations: `fadeInUp`, `fadeIn`, and `scaleIn`
+2. Created `.animate-on-scroll` base class (hidden by default) with `.animated` trigger class
+3. Added stagger delay classes (`.stagger-1` through `.stagger-6`) for grid items
+4. Hero content animates on page load (above the fold, no scroll trigger)
+5. Product cards and review cards get animation classes dynamically via JS
+6. Feature icons on homepage stagger in sequence when scrolled into view
+7. Intersection Observer with 15% threshold triggers animations once per element
+8. Respects `prefers-reduced-motion` media query for accessibility
+
+**Files Modified:**
+- assets/css/styles.css - Added keyframes, animation classes, stagger delays, and reduced motion support
+- assets/js/script.js - Added `initScrollAnimations()` with Intersection Observer, updated `renderProducts()` and `renderReviews()` to add animation classes
+- index.html - Added animation classes to section titles, section headers, about content, and feature elements
+
+**Result:**
+- Sections and cards fade/slide in as they enter the viewport
+- Hero content animates on page load
+- Grid items stagger with slight delays for a polished effect
+- Animations play only once (no re-triggering on scroll back)
+- Reduced motion users see no animations
+
+---
+
 ### v4.1 - 2026-03-02
 **Corrected Natural Ingredients Claims (100% → 90%+)**
 
@@ -915,8 +944,8 @@
 
 ## Acknowledgments
 
-Development sessions conducted from January 21, 2026 to February 23, 2026.
-Total development time: ~45 hours of focused development work.
+Development sessions conducted from January 21, 2026 to March 5, 2026.
+Total development time: ~46 hours of focused development work.
 Collaboration between human requirements and AI implementation.
 
-*Last Updated: February 23, 2026*
+*Last Updated: March 5, 2026*
