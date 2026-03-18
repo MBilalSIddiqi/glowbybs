@@ -2,6 +2,31 @@
 
 ---
 
+### v4.3 - 2026-03-18
+**Fixed Code Review Concerns**
+
+**Issue:** Code review identified 7 concerns including misplaced files, missing .gitignore, brand guideline violation, and project hygiene issues.
+
+**Solution Implemented:**
+1. Moved `menu.png` and `search result.png` from project root to `assets/img/` (renamed to `search-result.png`)
+2. Created `.gitignore` with `.claude/` to prevent accidental commits
+3. Fixed "100% Natural" to "90%+ Natural" in improvements.txt to match brand guidelines
+4. Verified logo.svg already has trailing newline (no change needed)
+5. Verified `assests` typo file already removed (no change needed)
+
+**Files Modified:**
+- .gitignore - Created with `.claude/` entry
+- assets/img/menu.png - Moved from project root
+- assets/img/search-result.png - Moved and renamed from project root
+- improvements.txt - Fixed brand guideline violation
+
+**Result:**
+- Clean project structure with images in correct directory
+- .claude/ directory will not be accidentally committed
+- All brand claims consistent across the project
+
+---
+
 ### v4.2 - 2026-03-05
 **Added Scroll-Triggered Entrance Animations**
 
