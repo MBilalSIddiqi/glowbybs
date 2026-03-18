@@ -2,6 +2,23 @@
 
 ---
 
+### v4.4 - 2026-03-18
+**Updated GitHub Pages URL to New Username**
+
+**Issue:** Site URLs pointed to `mbilalsiddiqi.github.io` but the repo has moved to the `haircarebybs` GitHub account.
+
+**Solution Implemented:**
+1. Replaced all instances of `mbilalsiddiqi.github.io/bint-e-samin-soaps` with `haircarebybs.github.io/bint-e-samin-soaps`
+
+**Files Modified:**
+- All 11 HTML files - OG meta tags, Schema.org JSON-LD, canonical URLs
+- sitemap.xml - All page URLs updated
+
+**Result:**
+- All URLs now point to the correct GitHub Pages domain
+
+---
+
 ### v4.3 - 2026-03-18
 **Fixed Code Review Concerns**
 
