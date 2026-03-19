@@ -2,6 +2,24 @@
 
 ---
 
+### v4.7 - 2026-03-19
+**Added Brand Text Next to Logo**
+
+**Issue:** No text beside the logo — needed "Bint-e-Samin" with tagline "Skin & Hair Care".
+
+**Solution Implemented:**
+1. Added `.logo-text` div with brand name and tagline next to the logo image on all 11 pages
+2. Styled with flexbox layout, Playfair Display font for name, subtle tagline
+
+**Files Modified:**
+- All 11 HTML files - Added logo-text markup
+- assets/css/styles.css - Added .logo-text, .logo-name, .logo-tagline styles
+
+**Result:**
+- Logo now displays with "Bint-e-Samin" and "Skin & Hair Care" tagline on all pages
+
+---
+
 ### v4.6 - 2026-03-19
 **Updated Site URLs to glowbybs**
 
