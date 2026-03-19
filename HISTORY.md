@@ -2,6 +2,24 @@
 
 ---
 
+### v4.5 - 2026-03-19
+**Replaced Site Logo with New Brand PNG**
+
+**Issue:** User wanted to replace the SVG logo with the new `bint-e-samin.png` brand logo.
+
+**Solution Implemented:**
+1. Changed logo `src` from `logo.svg` to `assets/images/bint-e-samin.png` across all 8 HTML pages that use it
+2. Kept `logo.svg` in the repo for easy revert if needed
+
+**Files Modified:**
+- index.html, products.html, about.html, contact.html, faq.html, error.html, 404.html, 500.html - Updated logo image src
+
+**Result:**
+- New brand logo displays across all pages
+- Old logo.svg preserved for rollback
+
+---
+
 ### v4.4 - 2026-03-18
 **Updated GitHub Pages URL to haircarebybs Repo**
 
