@@ -2,6 +2,23 @@
 
 ---
 
+### v4.6 - 2026-03-19
+**Updated Site URLs to glowbybs**
+
+**Issue:** Repo renamed to glowbybs, site URLs needed to match.
+
+**Solution Implemented:**
+1. Replaced all `haircarebybs` references with `glowbybs` across all HTML files and sitemap.xml
+
+**Files Modified:**
+- All 11 HTML files - OG meta tags, Schema.org JSON-LD, canonical URLs
+- sitemap.xml - All page URLs updated
+
+**Result:**
+- All URLs now point to `https://mbilalsiddiqi.github.io/glowbybs/`
+
+---
+
 ### v4.5 - 2026-03-19
 **Replaced Site Logo with New Brand PNG**
 
